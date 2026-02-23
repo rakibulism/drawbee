@@ -21,6 +21,149 @@ const illustrations = [
     ],
     promptFile: "prompts/illustration-1.txt",
   },
+  {
+    id: "cat-sleeping",
+    title: "Cat sleeping on a window edge",
+    category: "color",
+    tags: ["cat", "sleeping", "window", "peaceful"],
+    thumb: "illustrations/list_1/Cat sleeping on a window edge/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Cat sleeping on a window edge/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Cat sleeping on a window edge/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Cat sleeping on a window edge/Solid Black.svg" },
+    ],
+    promptFile: "prompts/cat-sleeping.txt",
+  },
+  {
+    id: "hot-air-balloon",
+    title: "Hot air balloon drifting slowly",
+    category: "color",
+    tags: ["balloon", "sky", "flight", "gentle"],
+    thumb: "illustrations/list_1/Hot air balloon drifting slowly/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Hot air balloon drifting slowly/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Hot air balloon drifting slowly/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Hot air balloon drifting slowly/Solid Black.svg" },
+    ],
+    promptFile: "prompts/hot-air-balloon.txt",
+  },
+  {
+    id: "open-book",
+    title: "Open book with soft abstract shapes flowing out",
+    category: "color",
+    tags: ["book", "abstract", "imagination", "flow"],
+    thumb: "illustrations/list_1/Open book with soft abstract shapes flowing out/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Open book with soft abstract shapes flowing out/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Open book with soft abstract shapes flowing out/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Open book with soft abstract shapes flowing out/Solid Black.svg" },
+    ],
+    promptFile: "prompts/open-book.txt",
+  },
+  {
+    id: "paper-boat",
+    title: "Paper boat floating on water",
+    category: "color",
+    tags: ["boat", "paper", "water", "simple"],
+    thumb: "illustrations/list_1/Paper boat floating on water/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Paper boat floating on water/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Paper boat floating on water/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Paper boat floating on water/Solid Black.svg" },
+    ],
+    promptFile: "prompts/paper-boat.txt",
+  },
+  {
+    id: "person-sun",
+    title: "Person holding a tiny sun",
+    category: "color",
+    tags: ["person", "sun", "light", "hope"],
+    thumb: "illustrations/list_1/Person holding a tiny sun/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Person holding a tiny sun/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Person holding a tiny sun/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Person holding a tiny sun/Solid Black.svg" },
+    ],
+    promptFile: "prompts/person-sun.txt",
+  },
+  {
+    id: "person-watering",
+    title: "Person watering a plant that’s taller than them",
+    category: "color",
+    tags: ["person", "plant", "watering", "growth"],
+    thumb: "illustrations/list_1/Person watering a plant that’s taller than them/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Person watering a plant that’s taller than them/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Person watering a plant that’s taller than them/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Person watering a plant that’s taller than them/Solid Black.svg" },
+    ],
+    promptFile: "prompts/person-watering.txt",
+  },
+  {
+    id: "plane-upward",
+    title: "Plane flying upward",
+    category: "color",
+    tags: ["plane", "sky", "flight", "aspiration"],
+    thumb: "illustrations/list_1/Plane flying upward/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Plane flying upward/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Plane flying upward/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Plane flying upward/Solid Black.svg" },
+    ],
+    promptFile: "prompts/plane-upward.txt",
+  },
+  {
+    id: "rocket-launch",
+    title: "Rocket launching gently (not dramatic)",
+    category: "color",
+    tags: ["rocket", "space", "launch", "minimal"],
+    thumb: "illustrations/list_1/Rocket launching gently (not dramatic)/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Rocket launching gently (not dramatic)/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Rocket launching gently (not dramatic)/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Rocket launching gently (not dramatic)/Solid Black.svg" },
+    ],
+    promptFile: "prompts/rocket-launch.txt",
+  },
+  {
+    id: "small-house",
+    title: "Small house on a hill",
+    category: "color",
+    tags: ["house", "hill", "home", "landscape"],
+    thumb: "illustrations/list_1/Small house on a hill/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Small house on a hill/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Small house on a hill/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Small house on a hill/Solid Black.svg" },
+    ],
+    promptFile: "prompts/small-house.txt",
+  },
+  {
+    id: "two-friends-box",
+    title: "Two friends sitting inside a box",
+    category: "color",
+    tags: ["friends", "box", "fun", "childhood"],
+    thumb: "illustrations/list_1/Two friends sitting inside a box/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Two friends sitting inside a box/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Two friends sitting inside a box/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Two friends sitting inside a box/Solid Black.svg" },
+    ],
+    promptFile: "prompts/two-friends-box.txt",
+  },
+  {
+    id: "two-people-umbrella",
+    title: "Two people sharing one umbrella",
+    category: "color",
+    tags: ["people", "umbrella", "rain", "connection"],
+    thumb: "illustrations/list_1/Two people sharing one umbrella/Full Color.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_1/Two people sharing one umbrella/Full Color.svg" },
+      { label: "Monochrome", src: "illustrations/list_1/Two people sharing one umbrella/Monochromatic.svg" },
+      { label: "Black", src: "illustrations/list_1/Two people sharing one umbrella/Solid Black.svg" },
+    ],
+    promptFile: "prompts/two-people-umbrella.txt",
+  },
 ];
 
 function normalize(text) {
@@ -84,8 +227,8 @@ function renderGallery(items) {
           <span class="badge">${item.category === "color" ? "Full Color" : item.category}</span>
           <span class="taglist">
             ${(item.tags || [])
-              .map((tag) => `<span class="tag">${tag}</span>`)
-              .join("")}
+        .map((tag) => `<span class="tag">${tag}</span>`)
+        .join("")}
           </span>
         </div>
       </div>
