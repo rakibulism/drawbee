@@ -164,6 +164,28 @@ const illustrations = [
     ],
     promptFile: "prompts/two-people-umbrella.txt",
   },
+  {
+    id: "person-moon",
+    title: "Person on the Moon",
+    category: "color",
+    tags: ["person", "moon", "night", "serene", "starry"],
+    thumb: "illustrations/list_2/image 20.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_2/image 20.svg" },
+    ],
+    promptFile: "prompts/person-moon.txt",
+  },
+  {
+    id: "hanging-moon",
+    title: "Hanging Moon Lamp",
+    category: "color",
+    tags: ["moon", "lamp", "concept", "stars", "hanging"],
+    thumb: "illustrations/list_2/image 29.svg",
+    variations: [
+      { label: "Full Color", src: "illustrations/list_2/image 29.svg" },
+    ],
+    promptFile: "prompts/hanging-moon.txt",
+  },
 ];
 
 function normalize(text) {
