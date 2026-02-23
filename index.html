@@ -1,123 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drawbee Illustration Gallery</title>
-    <meta
-      name="description"
-      content="A static gallery of AI-assisted illustrations with searchable categories, variations, and prompts. Built for GitHub Pages."
-    />
 
-    <!-- Favicon + app icons (reuse main logo asset) -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="drawbee__logo.svg"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="drawbee__logo.svg"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drawbee Illustration Gallery</title>
+  <meta name="description"
+    content="A static gallery of AI-assisted illustrations with searchable categories, variations, and prompts. Built for GitHub Pages." />
 
-    <!-- Social preview (GitHub / Twitter / etc.) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Drawbee Illustration Gallery" />
-    <meta
-      property="og:description"
-      content="Browse AI illustration prompts and visual variations in a fast, static gallery."
-    />
-    <meta property="og:image" content="github-thumb.png" />
-    <meta property="og:image:alt" content="Drawbee bee-pencil logo with gallery preview" />
-    <meta property="og:url" content="https://your-username.github.io/drawbee" />
+  <!-- Favicon + app icons (reuse main logo asset) -->
+  <link rel="icon" type="image/svg+xml" href="drawbee__logo.svg" />
+  <link rel="apple-touch-icon" href="drawbee__logo.svg" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Drawbee Illustration Gallery" />
-    <meta
-      name="twitter:description"
-      content="Browse AI illustration prompts and visual variations in a fast, static gallery."
-    />
-    <meta name="twitter:image" content="github-thumb.png" />
+  <!-- Social preview (GitHub / Twitter / etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Drawbee Illustration Gallery" />
+  <meta property="og:description"
+    content="Browse AI illustration prompts and visual variations in a fast, static gallery." />
+  <meta property="og:image" content="github-thumb.png" />
+  <meta property="og:image:alt" content="Drawbee bee-pencil logo with gallery preview" />
+  <meta property="og:url" content="https://your-username.github.io/drawbee" />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">
-        <img
-          src="drawbee__logo.svg"
-          alt="Drawbee logo - smiling bee pencil"
-          class="brand-logo"
-        />
-        <div class="brand-copy">
-          <h1>Drawbee Illustration Gallery</h1>
-          <p class="tagline">
-            A static gallery for exploring AI illustration prompts and visual
-            variations.
-          </p>
-        </div>
-      </div>
-      <div class="controls">
-        <label class="search">
-          <span class="search-label">Search</span>
-          <input
-            id="search-input"
-            type="search"
-            placeholder="Search by title, tags, or prompt keywords..."
-            autocomplete="off"
-          />
-        </label>
-        <div class="filters" aria-label="Filter by category">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="color">Full Color</button>
-          <button class="filter-btn" data-filter="mono">Monochrome</button>
-          <button class="filter-btn" data-filter="black">Black</button>
-        </div>
-      </div>
-    </header>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Drawbee Illustration Gallery" />
+  <meta name="twitter:description"
+    content="Browse AI illustration prompts and visual variations in a fast, static gallery." />
+  <meta name="twitter:image" content="github-thumb.png" />
 
-    <main>
-      <section aria-label="Illustration gallery">
-        <div id="gallery" class="gallery-grid"></div>
-        <p id="empty-state" class="empty-state hidden">
-          No illustrations match your search. Try a different phrase or clear
-          the filters.
-        </p>
-      </section>
-    </main>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- Modal Markup (from Dev Doc, slightly adapted) -->
-    <div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="modal-backdrop" data-dismiss="modal"></div>
-      <div class="modal-dialog" role="document">
-        <button
-          id="close-modal"
-          class="modal-close"
-          type="button"
-          aria-label="Close"
-        >
-          &times;
-        </button>
-        <div class="modal-body">
-          <h2 id="modal-title"></h2>
-          <div id="modal-variations" class="variations"></div>
-          <section class="prompt-section">
-            <h3>AI Prompt</h3>
-            <pre id="modal-prompt"></pre>
-          </section>
-        </div>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="drawbee__logo.svg" alt="Drawbee logo" class="brand-logo" />
+      <div class="brand-copy">
+        <h1>Drawbee Illustration Gallery</h1>
+        <p class="tagline">Explore AI illustration prompts and variations.</p>
       </div>
     </div>
+    <div class="controls">
+      <div class="search">
+        <input id="search-input" type="search" placeholder="Search by title, tags, or keywords..." autocomplete="off" />
+      </div>
+      <div class="filters" aria-label="Filter by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="color">Full Color</button>
+        <button class="filter-btn" data-filter="mono">Monochrome</button>
+        <button class="filter-btn" data-filter="black">Black</button>
+      </div>
+    </div>
+  </header>
 
-    <footer class="site-footer">
-      <p>
-        Built as a fully static gallery for GitHub Pages. Add more
-        illustrations by dropping image files into
-        <code>/images</code> and prompt text into <code>/prompts</code>.
+  <main>
+    <section aria-label="Illustration gallery">
+      <div id="gallery" class="gallery-grid"></div>
+      <p id="empty-state" class="empty-state hidden">
+        No illustrations match your search. Try a different phrase or clear
+        the filters.
       </p>
-    </footer>
+    </section>
+  </main>
 
-    <script src="main.js" defer></script>
-  </body>
+  <!-- Modal Markup (from Dev Doc, slightly adapted) -->
+  <div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-dismiss="modal"></div>
+    <div class="modal-dialog" role="document">
+      <button id="close-modal" class="modal-close" type="button" aria-label="Close">
+        &times;
+      </button>
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <div id="modal-variations" class="variations"></div>
+        <section class="prompt-section">
+          <h3>AI Prompt</h3>
+          <pre id="modal-prompt"></pre>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>A static gallery for GitHub Pages. Built with HTML, CSS, and JS.</p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+
 </html>
-
