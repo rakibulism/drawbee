@@ -208,13 +208,15 @@ function matchesSearch(illustration, query) {
 function matchesFilter(illustration, filter) {
   if (filter === "all") return true;
   if (!filter) return true;
-  if (filter === "color") return illustration.category === "color";
-  if (filter === "mono") return illustration.category === "mono";
-  if (filter === "black") return illustration.category === "black";
-  return true;
+  if (filter === "color") return true; // Show all by default in color tab
+
+  const searchKey = filter === "mono" ? "monochrome" : filter;
+  return illustration.variations.some(v =>
+    v.label.toLowerCase().includes(searchKey)
+  );
 }
 
-function renderGallery(items) {
+function renderGallery(items, activeFilter = "all") {
   const container = document.getElementById("gallery");
   const emptyState = document.getElementById("empty-state");
 
@@ -230,6 +232,14 @@ function renderGallery(items) {
   emptyState.classList.add("hidden");
 
   for (const item of items) {
+    // Determine which image to show based on filter
+    let displayThumb = item.thumb;
+    if (activeFilter === "mono" || activeFilter === "black") {
+      const searchKey = activeFilter === "mono" ? "monochrome" : activeFilter;
+      const variation = item.variations.find(v => v.label.toLowerCase().includes(searchKey));
+      if (variation) displayThumb = variation.src;
+    }
+
     const el = document.createElement("article");
     el.className = "gallery-item";
     el.dataset.id = item.id;
@@ -238,7 +248,7 @@ function renderGallery(items) {
 
     el.innerHTML = `
       <img
-        src="${item.thumb}"
+        src="${displayThumb}"
         alt="${item.title}"
         class="gallery-thumb"
         loading="lazy"
@@ -246,7 +256,7 @@ function renderGallery(items) {
       <div class="gallery-body">
         <h2 class="gallery-title">${item.title}</h2>
         <div class="gallery-meta">
-          <span class="badge">${item.category === "color" ? "Full Color" : item.category}</span>
+          <span class="badge">${activeFilter === "all" ? "Concept" : activeFilter}</span>
           <span class="taglist">
             ${(item.tags || [])
         .map((tag) => `<span class="tag">${tag}</span>`)
@@ -354,7 +364,7 @@ function setupFilters() {
       (item) =>
         matchesFilter(item, activeFilter) && matchesSearch(item, normalized),
     );
-    renderGallery(filtered);
+    renderGallery(filtered, activeFilter);
   }
 
   if (searchInput) {
