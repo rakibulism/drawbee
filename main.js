@@ -4,19 +4,19 @@ const illustrations = [
     title: "Drawbee Brand Mascot",
     category: "color",
     tags: ["logo", "mascot", "bee", "pencil", "character"],
-    thumb: "drawbee__logo.png",
+    thumb: "drawbee__logo.svg",
     variations: [
       {
         label: "Full Color",
-        src: "drawbee__logo.png",
+        src: "drawbee__logo.svg",
       },
       {
         label: "Soft Monochrome",
-        src: "drawbee__logo.png",
+        src: "drawbee__logo.svg",
       },
       {
         label: "High-Contrast Black",
-        src: "drawbee__logo.png",
+        src: "drawbee__logo.svg",
       },
     ],
     promptFile: "prompts/illustration-1.txt",
