@@ -6,12 +6,14 @@ The site is designed to run on **GitHub Pages** with no backend or database.
 
 ### Core features
 
-- **Responsive gallery grid**: Cards for each illustration concept, optimized for desktop and mobile.
-- **Client-side search**: Filter illustrations by title, tags, or prompt keywords.
-- **Category filters**: Quickly switch between Full Color, Monochrome, and Black variations.
-- **Modal detail view**: Click any card to see all variations side‑by‑side.
-- **Prompt viewer**: Prompts are loaded from plain `.txt` files so you can keep art and text versioned together.
-- **Zero backend**: Everything runs statically and is GitHub Pages–ready.
+- **Masonry Gallery Layout**: Dynamic, Pinterest-style grid that elegantly handles varying illustration aspect ratios.
+- **Sticky Header**: Compact, persistent navigation bar with integrated search and filters.
+- **Spotlight Search (⌘K)**: Instant search focus via `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux) hotkey.
+- **Copy SVG to Clipboard**: Easily copy the raw SVG code for any illustration variation directly from the detail view.
+- **Category Filters**: Quickly switch between Full Color, Monochrome, and Black variations with a responsive filter dropdown on mobile.
+- **Modal Detail View**: Click any card to see all variations side-by-side with high-quality previews.
+- **Prompt Viewer**: Prompts are loaded from plain `.txt` files so you can keep art and text versioned together.
+- **Zero Backend**: Everything runs statically and is GitHub Pages–ready. No database or build step required.
 
 ### Project structure
 
