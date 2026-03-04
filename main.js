@@ -247,21 +247,22 @@ function renderGallery(items, activeFilter = "all") {
     el.dataset.tags = (item.tags || []).join(",");
 
     el.innerHTML = `
-      <img
-        src="${displayThumb}"
-        alt="${item.title}"
-        class="gallery-thumb"
-        loading="lazy"
-      />
-      <div class="gallery-body">
-        <h2 class="gallery-title">${item.title}</h2>
-        <div class="gallery-meta">
-          <span class="badge">${activeFilter === "all" ? "Concept" : activeFilter}</span>
-          <span class="taglist">
-            ${(item.tags || [])
+      <div class="gallery-card">
+        <img
+          src="${displayThumb}"
+          alt="${item.title}"
+          class="gallery-thumb"
+          loading="lazy"
+        />
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <h2 class="gallery-title">${item.title}</h2>
+            <div class="gallery-tags">
+              ${(item.tags || [])
         .map((tag) => `<span class="tag">${tag}</span>`)
         .join("")}
-          </span>
+            </div>
+          </div>
         </div>
       </div>
     `;
@@ -367,12 +368,31 @@ function setupFilters() {
     renderGallery(filtered, activeFilter);
   }
 
-  if (searchInput) {
+  function setupSearchShortcut() {
+    const searchInput = document.getElementById("search-input");
+    if (!searchInput) return;
+
     searchInput.addEventListener("input", (event) => {
       query = event.target.value || "";
       applyFilters();
     });
+
+    const handleKeyDown = (e) => {
+      // Cmd+K (Mac) or Ctrl+K (Windows/Linux)
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+      // Escape to blur
+      if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.blur();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
   }
+
+  setupSearchShortcut();
 
   for (const button of filterButtons) {
     button.addEventListener("click", () => {
