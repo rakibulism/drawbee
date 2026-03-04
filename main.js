@@ -305,7 +305,12 @@ async function openModal(item) {
     .map(
       (variation) => `
       <figure class="variation-card">
-        <img src="${variation.src}" alt="${item.title} – ${variation.label}" loading="lazy" />
+        <div class="variation-image-container">
+          <img src="${variation.src}" alt="${item.title} – ${variation.label}" loading="lazy" />
+          <button class="copy-svg-btn" data-src="${variation.src}" title="Copy SVG code">
+            <span class="btn-text">Copy SVG</span>
+          </button>
+        </div>
         <figcaption class="variation-label">${variation.label}</figcaption>
       </figure>
     `,
@@ -348,6 +353,40 @@ function setupModalInteractions() {
   if (backdrop) {
     backdrop.addEventListener("click", closeModal);
   }
+
+  // Global handler for Copy SVG buttons (using delegation)
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".copy-svg-btn");
+    if (!btn) return;
+
+    const svgUrl = btn.dataset.src;
+    const originalText = btn.querySelector(".btn-text").textContent;
+
+    try {
+      const response = await fetch(svgUrl);
+      if (!response.ok) throw new Error("Failed to fetch SVG");
+      const svgText = await response.text();
+
+      await navigator.clipboard.writeText(svgText);
+
+      // Feedback
+      btn.classList.add("copied");
+      btn.querySelector(".btn-text").textContent = "Copied!";
+
+      setTimeout(() => {
+        btn.classList.remove("copied");
+        btn.querySelector(".btn-text").textContent = originalText;
+      }, 2000);
+    } catch (err) {
+      console.error("Clipboard copy failed:", err);
+      btn.querySelector(".btn-text").textContent = "Error!";
+      btn.classList.add("error");
+      setTimeout(() => {
+        btn.classList.remove("error");
+        btn.querySelector(".btn-text").textContent = originalText;
+      }, 2000);
+    }
+  });
 }
 
 function setupFilters() {
