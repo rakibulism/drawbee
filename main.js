@@ -409,6 +409,31 @@ function setupFilters() {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderGallery(illustrations);
+  function setupFilterToggle() {
+    const toggle = document.getElementById("filter-toggle");
+    const container = document.getElementById("filters-container");
+    if (!toggle || !container) return;
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      container.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!container.contains(e.target) && e.target !== toggle) {
+        container.classList.remove("show");
+      }
+    });
+
+    // Close when a filter is clicked
+    container.addEventListener("click", (e) => {
+      if (e.target.classList.contains("filter-btn")) {
+        container.classList.remove("show");
+      }
+    });
+  }
+
+  setupFilterToggle();
   setupFilters();
   setupModalInteractions();
 });

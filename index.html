@@ -45,11 +45,16 @@
           <input id="search-input" type="search" placeholder="Search illustrations... ⌘K" autocomplete="off" />
         </div>
       </div>
-      <div class="filters" aria-label="Filter by category">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="color">Full Color</button>
-        <button class="filter-btn" data-filter="mono">Monochrome</button>
-        <button class="filter-btn" data-filter="black">Black</button>
+      <div class="header-actions">
+        <button id="filter-toggle" class="filter-toggle-btn" aria-label="Toggle filters">
+          <span class="filter-icon">⋮</span>
+        </button>
+        <div id="filters-container" class="filters" aria-label="Filter by category">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="color">Full Color</button>
+          <button class="filter-btn" data-filter="mono">Monochrome</button>
+          <button class="filter-btn" data-filter="black">Black</button>
+        </div>
       </div>
     </div>
   </header>
